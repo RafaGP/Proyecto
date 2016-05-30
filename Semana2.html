@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $(".test").click(function(){
+    $(this).hide();
+  });
+
+  $(".show").click(function(){
+    $(".test").show();
+  });
+
+  $(".fadein").click(function(){
+    $("#td").fadeToggle(3000);
+  });
+
+  $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+
+  $("#anime").click(function(){
+    var di=$("#anime");
+    di.animate({width:'100px',opacity:'0.4'},"slow");
+  });
+
+  $("input").focus(function(){
+    $(this).css("background-color","blue");
+  });
+
+  $("input").blur(function(){
+    $(this).css("background-color","red");
+  });
+});
+</script>
+
+<style> 
+#panel,#flip
+{
+padding:5px;
+text-align:center;
+
+border:solid 1px #c3c3c3;
+}
+#panel
+{
+padding:50px;
+display:none;
+}
+</style>
+</head>
+<body>
+  <h1 align="center">Ejemplos de Jquery</h1>
+<table align="center">
+  <tr>
+    <td></td><td></td><th>Aprendiendo Jquery</th><td></td><td></td>
+  </tr>
+
+  <tr>
+    <th colspan=2>Metodos</th><th>Descripcion</th><th colspan=2>Ejemplo</th>
+  </tr>
+
+  <tr>
+    <td colspan=2>Metodo Hide()</td><td>Oculata Elementos</td><td class="test"colspan=2>Ocultar dar clic</td>
+  </tr>
+
+  <tr>
+    <td colspan=2>Metodo Show()</td><td>Muestra Elementos
+  </td><td colspan=2><button class="show">Mostrar</button></td>
+  </tr>
+
+  <tr>
+    <td colspan=2>Metodo fadeIn()</td><td>Descolora un elemento
+  </td><td id="td" colspan=2 style="background-color:red;"><button class="fadein">decolorar</button></td>
+  </tr>
+
+  <tr>
+    <td colspan=2>fadeOut()</td><td>Método para colorear un elemento.
+  </td><td colspan=2>Colorear</td>
+  </tr>
+
+  <tr id="flip">
+    <td colspan=5>slideDown() Método para desliza hacia abajo un elemento
+   Deslizar</td>
+  </tr>
+
+  <tr id="panel">
+    <td colspan=5> Prueba </td>
+  </tr>
+
+  <tr>
+    <td colspan=3>anime()  Pone movimiento</td><td colspan= 2 id ="anime" style="background:red;position:absolute;height:18px;width:10px;"></td>
+  </tr>
+  <tr>
+    <td colspan=2>Focus() se activa al ingresar puntero</td><td colspan=3> blur() se activa cuando se deja al campo</td>
+  </tr>
+  <tr>
+    <td colspan=2>Nombre: <input type="text" name="fullname"></td><td colspan= 3>Email: <input type="text" name="email"></td>
+  </tr>
+
+</table>
+</body>
+</html>
